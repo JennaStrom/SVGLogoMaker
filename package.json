@@ -1,0 +1,27 @@
+{
+  "name": "svglogomaker",
+  "version": "1.0.0",
+  "description": "Build a node.js command-line application that takes in user input to generate a logo and save it as an SVG file.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JennaStrom/SVGLogoMaker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JennaStrom/SVGLogoMaker/issues"
+  },
+  "homepage": "https://github.com/JennaStrom/SVGLogoMaker#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
