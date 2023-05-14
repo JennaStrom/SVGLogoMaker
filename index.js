@@ -10,23 +10,24 @@ function writeToFile(fileName, data) {
     //set width and height
     svgString = '<svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">';
     //set user shape choice
-    svgString = `${data.shape}`;
+    svgString += `${data.shape}`;
 
     let shapeChoice
     if (data.shape === "Circle") {
         shapeChoice = new Circle();
-        svgString = `<circle cx="150" cy="115" r="80" fill="${data.shapeColor}"/>`;
+        svgString += `<circle cx="150" cy="115" r="80" fill="${data.shapeColor}"/>`;
     } else if (data.shape === "Square") {
         shapeChoice = new Square();
-        svgString = `<rect x="73" y="40" width="160" height="160" fill="${data.shapeColor}"/>`;
+        svgString += `<rect x="73" y="40" width="160" height="160" fill="${data.shapeColor}"/>`;
     } else {
         shapeChoice = new Triangle();
-        svgString = `<polygon points="150, 18 244, 182 56, 182" fill="${data.shapeColor}"/>`;
+        svgString += `<polygon points="150, 18 244, 182 56, 182" fill="${data.shapeColor}"/>`;
     }
 
     //text
-    svgString = `<text x="150" y="130" text-anchor="middle" font-size="30" fill="${data.textColor}">${data.text}</text>`;
-    svgString = "</svg";
+    svgString += `<text x="150" y="130" text-anchor="middle" font-size="50" fill="${data.textColor}">${data.text}</text>`;
+    //closing tag
+    svgString += "</svg>";
     //write svg file
     fs.writeFile(fileName, svgString, (err) => {
         err ? console.log(err) : console.log("Generated logo.svg");
@@ -64,7 +65,7 @@ function promptUser() {
                 console.log("Can only enter up to 3 characters.");
                 promptUser();
             } else {
-                writeToFile("./examples/logo.svg", data);
+                writeToFile("logo.svg", data);
             }
         });
 }
