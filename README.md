@@ -8,8 +8,10 @@
   [Click Here](https://drive.google.com/file/d/14KgaGP8bcd0e-y__dMDKUFA6u17PdXXd/view) to see a video walkthrough of this application.
 
   Here is a screenshot of the application in use: 
+<img width="1440" alt="Screenshot 2023-05-14 at 1 09 09 PM" src="https://github.com/JennaStrom/SVGLogoMaker/assets/123525191/c2f5e92d-869a-4ac9-a486-0ce347daefdd">
 
   Here is an example of a finished logo:
+<img width="442" alt="Screenshot 2023-05-14 at 1 10 21 PM" src="https://github.com/JennaStrom/SVGLogoMaker/assets/123525191/1ade0486-da1c-4a02-a55b-a4b5a7b94b9c">
 
 ## Table of Contents
 - [Description](#description)
