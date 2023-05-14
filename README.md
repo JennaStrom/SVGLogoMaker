@@ -5,6 +5,12 @@
 ## Description
   Create a simple three letter logo for your project in a matter of seconds! You will save time and money by utilizing this application. Follow the prompts to choose your text, text color, shape and shape color. After those four simple questions your svg file will be created and you will have a logo!
 
+  [Click Here](https://drive.google.com/file/d/14KgaGP8bcd0e-y__dMDKUFA6u17PdXXd/view) to see a video walkthrough of this application.
+
+  Here is a screenshot of the application in use: 
+
+  Here is an example of a finished logo:
+
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
