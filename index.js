@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 //Require Filey System Module
 const fs = require("fs");
 //Import Shape Classes
-const { Triangle, Square, Circle } = require("./lib/shapes");
+const { Triangle, Square, Circle } = require("./lib/shapes.js");
 
 function writeToFile(fileName, data) {
     let svgString = "";
@@ -15,14 +15,17 @@ function writeToFile(fileName, data) {
     let shapeChoice
     if (data.shape === "Circle") {
         shapeChoice = new Circle();
+        svgString = `<circle cx="150" cy="115" r="80" fill="${data.shapeColor}"/>`;
     } else if (data.shape === "Square") {
         shapeChoice = new Square();
+        svgString = `<rect x="73" y="40" width="160" height="160" fill="${data.shapeColor}"/>`;
     } else {
         shapeChoice = new Triangle();
+        svgString = `<polygon points="150, 18 244, 182 56, 182" fill="${data.shapeColor}"/>`;
     }
 
     //text
-
+    svgString = `<text x="150" y="130" text-anchor="middle" font-size="30" fill="${data.textColor}">${data.text}</text>`;
     //write svg file
     fs.writeFile(fileName, svgString, (err) => {
         err ? console.log(err) : console.log("Generated logo.svg");
@@ -40,7 +43,7 @@ function promptUser() {
             },
             {
                 type: "input",
-                message: "Please choose text color.", //needs to be able to enter a color keyword or a hexadecimal number
+                message: "Please enter a color or hexadecimal number to choose your text color.",
                 name: "textColor"
             },
             {
@@ -51,16 +54,16 @@ function promptUser() {
             },
             {
                 type: "input",
-                message: "What color would you like the shape to be?", //needs to be able to enter a color keyword or a hexadecimal number
+                message: "Please enter a color or hexadecimal number to choose the color of your shape.",
                 name: "shapeColor"
             }
         ])
-        .then((answers) => {
-            if (answers.text.length > 3) {
+        .then((data) => {
+            if (data.text.length > 3) {
                 console.log("Can only enter up to 3 characters.");
                 promptUser();
             } else {
-                writeToFile("logo.svg", answers);
+                writeToFile("logo.svg", data);
             }
         });
 }
