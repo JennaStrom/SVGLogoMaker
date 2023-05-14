@@ -26,6 +26,7 @@ function writeToFile(fileName, data) {
 
     //text
     svgString = `<text x="150" y="130" text-anchor="middle" font-size="30" fill="${data.textColor}">${data.text}</text>`;
+    svgString = "</svg";
     //write svg file
     fs.writeFile(fileName, svgString, (err) => {
         err ? console.log(err) : console.log("Generated logo.svg");
@@ -63,7 +64,7 @@ function promptUser() {
                 console.log("Can only enter up to 3 characters.");
                 promptUser();
             } else {
-                writeToFile("logo.svg", data);
+                writeToFile("./examples/logo.svg", data);
             }
         });
 }
